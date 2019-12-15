@@ -1,4 +1,4 @@
-FROM python:alpine
+FROM python:buster
 
 WORKDIR /app
 ADD . .
