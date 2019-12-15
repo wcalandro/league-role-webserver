@@ -13,7 +13,6 @@ if riot_key is None:
 watcher = RiotWatcher(riot_key)
 
 app = Flask(__name__)
-app.config["DEBUG"] = True
 
 
 @app.route("/getRolesForMatch", methods=['GET'])
@@ -64,5 +63,5 @@ def getRolesForMatch():
             "match": match
         })
 
-
-app.run()
+if __name__ == '__main__':
+    app.run()
