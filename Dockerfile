@@ -7,4 +7,4 @@ RUN pip install waitress
 
 EXPOSE 5000
 
-CMD ["waitress-serve",  "--port", "5000", "--call", "api:create_app"]
+CMD ["python", "api.py"]

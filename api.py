@@ -2,6 +2,7 @@ from __future__ import print_function
 from roleml import roleml
 from flask import Flask, escape, request, jsonify
 from riotwatcher import RiotWatcher, ApiError
+from waitress import serve
 
 # Get RIOT_API_KEY from environment
 import os
@@ -13,7 +14,6 @@ if riot_key is None:
 watcher = RiotWatcher(riot_key)
 
 app = Flask(__name__)
-
 
 @app.route("/getRolesForMatch", methods=['GET'])
 def getRolesForMatch():
@@ -64,4 +64,4 @@ def getRolesForMatch():
         })
 
 if __name__ == '__main__':
-    app.run()
+    serve(app, host='0.0.0.0', port=5000)
