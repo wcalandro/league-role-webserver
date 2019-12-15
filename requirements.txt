@@ -1,0 +1,3 @@
+Flask==1.1.1
+riotwatcher==2.7.1
+roleml==0.1.10
